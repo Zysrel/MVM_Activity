@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+//import 'package:stacked_app/models/user.dart';
 
 import 'user_viewmodel.dart';
 
@@ -82,7 +83,7 @@ class UserView extends StackedView<UserViewModel> {
                                   children: [
                                     Column(
                                       children: [
-                                        Text('${viewModel.users[index].address.suite}, ${viewModel.users[index].address.street}, ${viewModel.users[index].address.city}, ${viewModel.users[index].address.zipcode}',),
+                                        Text("${viewModel.users[index].address.suite}, ${viewModel.users[index].address.street}, ${viewModel.users[index].address.city}, ${viewModel.users[index].address.zipcode}"),
                                       ],
                                     ),
                                   ],

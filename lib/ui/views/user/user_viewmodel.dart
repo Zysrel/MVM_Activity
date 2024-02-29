@@ -7,21 +7,21 @@ import 'package:stacked_services/stacked_services.dart';
 class UserViewModel extends BaseViewModel {
   final _navigationService = locator<NavigationService>();
   final _userService = locator<UserService>();
-  //final _addressService = locator<AddressService>();
 
-   List<User> _users =[];
-   List<User> get users => _users;
-  
-  getUsersFromService() async{
+  List<User> _users = [];
+  List<User> get users => _users;
+
+  getUsersFromService() async {
     _users = await _userService.getUsers();
     rebuildUi();
-    }
+  }
 
-
-  navigateBack() async{
+  navigateBack() async {
     _navigationService.back();
     rebuildUi();
   }
+
+  String getAddressAll(User user) {
+    return "${user.address.suite}, ${user.address.street}, ${user.address.city}, ${user.address.zipcode}";
+  }
 }
-
-
